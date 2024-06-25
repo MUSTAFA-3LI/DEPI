@@ -68,6 +68,7 @@ test the favicon.ico 's response (= 200 or 304)
 
 ```bash
     pytest tester.py
+    python3 tester.py
 ```
 
 # Troubleshooting
