@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egypt Weather</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PALESTINE Weather 🇸🇩</h1>
+        <div class="weather-widget">
+            <!-- Weatherwidget.io widget code -->
+            <!-- go to the site and select the region then git the code-->
+            <!-- this is the link of site [https://weatherwidget.io/]-->
+            <a class="weatherwidget-io" href="https://forecast7.com/en/31d9535d23/palestine/" data-label_1="PALESTINE" data-label_2="palestine" data-theme="original">PALESTINE palestine</a>
+            <script>
+                !function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = 'https://weatherwidget.io/js/widget.min.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, 'script', 'weatherwidget-io-js');
+            </script>
+        </div>
+    </div>
+</body>
+</html>
