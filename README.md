@@ -101,3 +101,14 @@ If you prefer to pull the pre-built Docker image from Docker Hub instead of buil
     docker run -p8000:8000 palestine_image
 ```
 
+# Docker Compose
+Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to describe the infrastructure of your application using a YAML file (docker-compose.yaml). With Docker Compose, you can manage and orchestrate multiple containers as a single service, simplifying the process of creating, starting, stopping, and scaling your application.
+
+## Activation Docker-Compose
+
+```bash
+    docker compose up -d
+```
+then we can open the wordpress from "[wordpress](http://localhost:5001/),
+and we can open phpmyadmin from [phpmyadmin](http://localhost:7001/)
+

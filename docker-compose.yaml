@@ -1,0 +1,47 @@
+version: "2.28.1"
+
+
+services:
+# database layer for wordpress >>  MySQL
+  mysql_database:
+    image: mysql:latest
+    restart: always
+    environment: 
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: wb_db
+      MYSQL_USER: wp_user
+      MYSQL_PASSWORD: 1234
+
+    volumes:
+      - mysql:/var/lib/mysql
+
+  wordpress:
+    depends_on:
+      - mysql_database
+    image: wordpress:latest
+    restart: always
+    ports:
+      - "5001:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql_database:3306
+      WORDPRESS_DB_USER: wp_user
+      WORDPRESS_DB_PASSWORD: 1234
+      WORDPRESS_DB_NAME: wb_db
+
+    volumes:
+      ["./:/var/www/html"]
+    
+  # image for phpmyadmin
+  phpmyadmin: 
+      depends_on:
+        - mysql_database
+      image: phpmyadmin/phpmyadmin:latest
+      restart: always
+      ports:
+        - "7001:80"
+      environment:
+        PMA_HOST: mysql_database
+        MYSQL_ROOT_PASSWORD: 1234
+
+volumes:
+  mysql: {}
