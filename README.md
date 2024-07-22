@@ -98,7 +98,7 @@ If you prefer to pull the pre-built Docker image from Docker Hub instead of buil
 
 ```bash
     docker pull mustafa3li/palestine_weather:latest
-    docker run -p8000:8000 palestine_image
+    docker run -p 8000:8000 mustafa3li/palestine_weather:latest
 ```
 
 # Docker Compose
