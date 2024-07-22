@@ -13,7 +13,7 @@ This is a simple weather app built with Flask that displays weather information 
 ```bash
 git clone https://github.com/MUSTAFA-3LI/DEPI
 cd DEPI
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
