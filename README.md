@@ -112,3 +112,25 @@ Docker Compose is a tool for defining and running multi-container Docker applica
 then we can open the wordpress from "[wordpress](http://localhost:5001/),
 and we can open phpmyadmin from [phpmyadmin](http://localhost:7001/)
 
+# GitHub Action
+
+This project uses GitHub Actions to automate Continuous Integration (CI) and Continuous Deployment (CD) processes. The workflow is defined in the .github/workflows/ci.yml file and consists of the following jobs:
+
+Workflow Overview |
+Testing:
+
+Runs on: ubuntu-latest
+Steps:
+Checkout code: Retrieves the source code from the repository.
+Set up Python: Configures the Python environment.
+Install dependencies: Installs the necessary Python packages specified in requirements.txt.
+Run tests: Executes tests using pytest.
+Build and Push Docker Image:
+
+Runs on: ubuntu-latest, 
+Dependencies: Runs after the tester job successed. 
+
+Build Docker image automatically: Builds the Docker image with the tag palestine_weather:latest.
+
+
+#### The CI/CD workflow automatically runs on each push to the main branch or when tags are pushed. To manually trigger the workflow or customize it, you can modify the .github/workflows/ci.yml file.
