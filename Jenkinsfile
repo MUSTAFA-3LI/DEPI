@@ -1,8 +1,8 @@
-pipline {
+pipeline {
     agent any 
 
     stages {
-        stage('Requirments') {
+        stage('Requirements') {
             steps {
                 sh '''
                 python3 -m venv venv
