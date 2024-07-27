@@ -134,3 +134,9 @@ Build Docker image automatically: Builds the Docker image with the tag palestine
 
 
 #### The CI/CD workflow automatically runs on each push to the main branch or when tags are pushed. To manually trigger the workflow or customize it, you can modify the .github/workflows/ci.yml file.
+
+## AWS and Jenkins
+after submitting into AWS account, creating module and creating EC2 instance, install jenkis tools in virtual machine to do CI/CD workflow.
+we use jenkis tool to install requiements , test project and build docker image automatically .
+
+
