@@ -19,11 +19,5 @@ pipeline {
                 sh 'docker build -t image .'
             }
         }
-
-        stage('Docker running') {
-            steps {
-                sh 'docker run -d -p 8000:8000 image'
-            }
-        }
     }
 }
