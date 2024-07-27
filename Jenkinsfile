@@ -2,7 +2,7 @@ pipeline {
     agent any 
 
     stages {
-        stage('Requirements') {
+        stage('Requirements And Test') {
             steps {
                 sh '''
                 python3 -m venv venv
@@ -12,8 +12,6 @@ pipeline {
                 '''
             }
         }
-
-        
         
 
         stage('Docker building') {
