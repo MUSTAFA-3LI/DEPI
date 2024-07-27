@@ -8,15 +8,13 @@ pipeline {
                 python3 -m venv venv
                 . venv/bin/activate
                 pip install -r requirements.txt
+                python3 tester.py
                 '''
             }
         }
 
-        stage('Test') {
-            steps {
-                sh 'python3 tester.py'
-            }
-        }
+        
+        
 
         stage('Docker building') {
             steps {
