@@ -133,9 +133,9 @@ Dependencies: Runs after the tester job successed.
 Build Docker image automatically: Builds the Docker image with the tag palestine_weather:latest.
 
 ### Adding badge
-```bash
-![CI](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
-```
+
+![ CI (Test And Build) ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
+
 
 
 #### The CI/CD workflow automatically runs on each push to the main branch or when tags are pushed. To manually trigger the workflow or customize it, you can modify the .github/workflows/ci.yml file.
