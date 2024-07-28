@@ -1,3 +1,5 @@
+![ CI/DC ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
+
 # Weather App From Implementation of API
 
 This is a simple weather app built with Flask that displays weather information for a specific region ( user choose the region from site [https://weatherwidget.io/] and get the code of his/her choices, then get the code from site directly ) using Weatherwidget.io. The app serves static files and includes automated tests for verifying the server responses.
@@ -131,11 +133,6 @@ Runs on: ubuntu-latest,
 Dependencies: Runs after the tester job successed. 
 
 Build Docker image automatically: Builds the Docker image with the tag palestine_weather:latest.
-
-### Adding badge
-
-![ CI (Test And Build) ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
-
 
 
 #### The CI/CD workflow automatically runs on each push to the main branch or when tags are pushed. To manually trigger the workflow or customize it, you can modify the .github/workflows/ci.yml file.
