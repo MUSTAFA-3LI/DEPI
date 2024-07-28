@@ -134,7 +134,7 @@ Build Docker image automatically: Builds the Docker image with the tag palestine
 
 ### Adding badge
 ```bash
-    ![Build Status](https://img.shields.io/github/workflow/status/MUSTAFA-3LI/DEPI/CI?label=tests&logo=github)
+    ![Build Status](https://img.shields.io/github/workflow/status/MUSTAFA-3LI/DEPI/git_action.yml?branch=main)
 ```
 
 
