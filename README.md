@@ -1,4 +1,4 @@
-![ CI/DC ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
+![ CI (Test And Build) ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
 
 # Weather App From Implementation of API
 
