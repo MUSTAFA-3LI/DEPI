@@ -1,0 +1,24 @@
+- name: Install Docker on EC2 instance
+  tasks:
+    - name: Update apt packages
+      apt:
+        update_cache: true
+
+    - name: Install virtual enviroment
+      apt:
+        name: python3.12-venv
+        state: present
+
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
+
+    - name: Start and enable Docker service
+      systemd:
+        name: docker
+        state: started
+        enabled: true
+
+  hosts: aws
+  become: true
