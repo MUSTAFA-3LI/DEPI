@@ -24,6 +24,9 @@ pip install -r requirements.txt
 ```bash
 Implement_UI_around_public_API/
 │
+├── .github/
+│ ├── git_action.yml
+|
 ├── static/
 │ ├── styles.css
 │ └── favicon.ico
@@ -36,6 +39,11 @@ Implement_UI_around_public_API/
 ├── README.md
 ├── tester.py
 └── gateway.py
+├── .gitignore
+└── .dockerignore
+├── Dockerfile
+└── Jenkinsfiel
+└── docker-compose.yaml
 
 ```
 
