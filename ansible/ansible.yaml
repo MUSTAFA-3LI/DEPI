@@ -1,24 +1,43 @@
-- name: Install Docker on EC2 instance
+- name: Setup environment on virtual machines
+  hosts: aws
+  become: true
   tasks:
-    - name: Update apt packages
-      apt:
+    - name: Update package list
+      ansible.builtin.apt:
         update_cache: true
 
-    - name: Install virtual enviroment
-      apt:
-        name: python3.12-venv
+    - name: Install essential packages
+      ansible.builtin.apt:
+        name:
+          - build-essential
+          - curl
+          - git
+          - python3
+          - python3-venv
+          - python3-pip
         state: present
 
     - name: Install Docker
-      apt:
-        name: docker-ce
+      ansible.builtin.apt:
+        name: docker.io
         state: present
 
+    - name: Add user to Docker group
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: true
+
     - name: Start and enable Docker service
-      systemd:
+      ansible.builtin.service:
         name: docker
         state: started
         enabled: true
 
-  hosts: aws
-  become: true
+    - name: Deploy the app container
+      community.docker.docker_container:
+        name: app
+        image: mustafa3li/palestine_weather
+        state: started
+        ports:
+          - "80:8080"
