@@ -27,12 +27,22 @@ Implement_UI_around_public_API/
 ├── .github/
 │ ├── git_action.yml
 |
+├── ansible
+| ├── ansible.cfg
+| ├── ansible.yaml
+| ├── hosts.ini
+| └── labsuser.pem
+|
 ├── static/
 │ ├── styles.css
 │ └── favicon.ico
 │
 ├── templates/
 │ └── index.html
+|
+├── terraform
+| ├── main.tf
+| └── .terraform.lock.hcl
 │
 ├── main.py
 ├── requirements.txt
@@ -124,29 +134,111 @@ and we can open phpmyadmin from [phpmyadmin](http://localhost:7001/)
 
 # GitHub Action
 
-This project uses GitHub Actions to automate Continuous Integration (CI) and Continuous Deployment (CD) processes. The workflow is defined in the .github/workflows/ci.yml file and consists of the following jobs:
+This workflow automates testing and building on push to `main` or any tag.
 
-Workflow Overview |
-Testing:
+## Workflow Triggers
 
-Runs on: ubuntu-latest
-Steps:
-Checkout code: Retrieves the source code from the repository.
-Set up Python: Configures the Python environment.
-Install dependencies: Installs the necessary Python packages specified in requirements.txt.
-Run tests: Executes tests using pytest.
-Build and Push Docker Image:
+- Push to `main`
+- Push with any tag
 
-Runs on: ubuntu-latest, 
-Dependencies: Runs after the tester job successed. 
+## Jobs
 
-Build Docker image automatically: Builds the Docker image with the tag palestine_weather:latest.
+1. **Tester**
+   - Checkout code
+   - Set up Python 3.12
+   - Install dependencies
+   - Run tests with `pytest`
 
+2. **Build**
+   - Depends on Tester job
+   - Checkout code
+   - Build Docker image `palestine_weather:latest`
 
 #### The CI/CD workflow automatically runs on each push to the main branch or when tags are pushed. To manually trigger the workflow or customize it, you can modify the .github/workflows/ci.yml file.
 
+to check the git_action.yml file before push it in github we can use tool `cat`
+```bash
+cd .github/workflows
+cat git_action.yml
+```
+
 ## AWS and Jenkins
-after submitting into AWS account, creating module and creating EC2 instance, install jenkis tools in virtual machine to do CI/CD workflow.
-we use jenkis tool to install requiements , test project and build docker image automatically .
+After creating AWS machines.
+
+# Jenkins Pipeline for Testing and Docker Build
+
+This Jenkins pipeline automates setting up a Python virtual environment, installing dependencies, running tests, and building a Docker image.
+
+## Pipeline Stages
+
+1. **Requirements And Test**
+   - Set up Python virtual environment
+   - Install dependencies from `requirements.txt`
+   - Run tests with `tester.py`
+
+2. **Docker Building**
+   - Build Docker image tagged as `image`
+
+## Usage
+
+- Add the provided `Jenkinsfile` to your repository.
+- Configure a Jenkins pipeline job to use this `Jenkinsfile`.
+- Ensure Jenkins has Docker and Python 3 installed on its agents.
+
+This pipeline is triggered manually or based on your preferred conditions, such as code pushes.
 
 
+
+## Ansible 
+
+This project sets up a development environment on three AWS virtual machines using Ansible. The setup includes installing essential packages, Docker, and deploying an app container.
+
+## Project Structure
+
+- `ansible.cfg`: Configuration file for Ansible.
+- `hosts.ini`: Inventory file containing the AWS instances.
+- `ansible.yaml`: Ansible playbook that defines the tasks to be executed on the AWS instances.
+
+## Prerequisites
+
+Before you can run the playbook, ensure you have (python, pipx, depandicies)
+
+1. **Ansible** installed on your control machine. You can install it using:
+    ```bash
+    sudo apt update
+    pipx install --include-deps ansible
+    pipx install ansible-core
+    pipx install ansible-core==2.12.3
+    ```
+
+2. **Access to your AWS instances** via SSH. Make sure you have the `labsuser.pem` key file and it's properly configured.
+   ```bash
+   cd Downloads/
+   sudo chmod 400 ./labsuser.pem
+   ssh -i ./labsuser.pem "the name of AWS virtual machine"
+   ```
+
+to run the playbook run the command:
+```bash
+ansible-playbook -i hosts.ini ansible.yaml
+```
+
+# Terraform AWS Configuration
+
+This Terraform configuration sets up an AWS environment with a security group and EC2 instances.
+
+## Key Components
+
+- **AWS Security Group**: Allows SSH (port 22) and HTTP (port 80) inbound traffic from anywhere.
+- **EC2 Instances**: Launches 3 `t3.medium` instances with Ubuntu 24.04 LTS.
+
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply
+```
+After finishing from AWS machines
+```bash
+terraform destory
+```
