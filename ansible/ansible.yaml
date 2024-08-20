@@ -34,10 +34,15 @@
         state: started
         enabled: true
 
-    - name: Deploy the app container
-      community.docker.docker_container:
-        name: app
+    - name: Pull Docker image from DockerHub
+      docker_image:
+        name: mustafa3li/palestine_weather
+        source: pull
+
+    - name: Run Docker container
+      community.general.docker_container:
+        name: palestine_weather_container
         image: mustafa3li/palestine_weather
         state: started
         ports:
-          - "80:8080"
+          - "8000:8000"

@@ -4,10 +4,10 @@ WORKDIR /docker_app
 
 COPY . .
 
-RUN pip3 install --no-cache-dir -r requirements.txt 
+RUN pip3 install -r requirements.txt 
     
 
-EXPOSE 8080
+EXPOSE 8000
 
 STOPSIGNAL SIGINT
 

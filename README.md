@@ -156,10 +156,10 @@ This workflow automates testing and building on push to `main` or any tag.
 
 #### The CI/CD workflow automatically runs on each push to the main branch or when tags are pushed. To manually trigger the workflow or customize it, you can modify the .github/workflows/ci.yml file.
 
-to check the git_action.yml file before push it in github we can use tool `cat`
+to check the git_action.yml file before push it in github we can use tool `act`
 ```bash
 cd .github/workflows
-cat git_action.yml
+act -W git_action.yml
 ```
 
 ## AWS and Jenkins
