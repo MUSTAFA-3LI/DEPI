@@ -42,7 +42,7 @@
     - name: Run Docker container
       community.general.docker_container:
         name: palestine_weather_container
-        image: mustafa3li/palestine_weather
+        image: mustafa3li/palestine_weather:latest
         state: started
         ports:
           - "8000:8000"
