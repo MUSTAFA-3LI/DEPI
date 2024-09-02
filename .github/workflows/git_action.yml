@@ -20,6 +20,9 @@ jobs:
       with:
         python-version: '3.12'
 
+    - name: List files
+      run: ls -lah
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -38,4 +41,4 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build Docker image
-      run: docker build -t palestine_weather:latest .
+      run: docker build -t palestine:latest .

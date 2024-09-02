@@ -36,13 +36,13 @@
 
     - name: Pull Docker image from DockerHub
       docker_image:
-        name: mustafa3li/palestine_weather
+        name: mustafa3li/palestine:latest
         source: pull
 
     - name: Run Docker container
       community.general.docker_container:
-        name: palestine_weather_container
-        image: mustafa3li/palestine_weather:latest
+        name: palestine_container
+        image: mustafa3li/palestine:latest
         state: started
         ports:
           - "8000:8000"

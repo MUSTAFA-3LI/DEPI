@@ -20,43 +20,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Project Structured
-```bash
-Implement_UI_around_public_API/
-│
-├── .github/
-│ ├── git_action.yml
-|
-├── ansible
-| ├── ansible.cfg
-| ├── ansible.yaml
-| ├── hosts.ini
-| └── labsuser.pem
-|
-├── static/
-│ ├── styles.css
-│ └── favicon.ico
-│
-├── templates/
-│ └── index.html
-|
-├── terraform
-| ├── main.tf
-| └── .terraform.lock.hcl
-│
-├── main.py
-├── requirements.txt
-├── README.md
-├── tester.py
-└── gateway.py
-├── .gitignore
-└── .dockerignore
-├── Dockerfile
-└── Jenkinsfiel
-└── docker-compose.yaml
-
-```
-
 # Servers
 
 1. **Development server**:
@@ -117,8 +80,8 @@ Pulling the Docker Image
 If you prefer to pull the pre-built Docker image from Docker Hub instead of building it locally:
 
 ```bash
-    docker pull mustafa3li/palestine_weather:latest
-    docker run -p 8000:8000 mustafa3li/palestine_weather:latest
+    docker pull mustafa3li/palestine:latest
+    docker run -p 8000:8000 mustafa3li/palestine:latest
 ```
 
 # Docker Compose
@@ -158,8 +121,7 @@ This workflow automates testing and building on push to `main` or any tag.
 
 to check the git_action.yml file before push it in github we can use tool `act`
 ```bash
-cd .github/workflows
-act -W git_action.yml
+act -W .github/workflows/git_action.yml
 ```
 
 ## AWS and Jenkins
