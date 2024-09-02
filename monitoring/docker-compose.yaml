@@ -12,7 +12,7 @@ x-common-config: &base_config
 services:
   app:
     <<: *base_config
-    image: mustafa3li/palestine_weather:latest
+    image: mustafa3li/palestine:latest
     container_name: app
     ports:
       - "8000:8000"
