@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: palestine-ingress
+
+spec:
+  rules:
+  - host: palestine.local
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: palestine-svc
+              port:
+                number: 8000

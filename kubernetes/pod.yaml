@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: palestine-pod
+  # namespace: palestine-ns
+  labels:
+    app: palestine-pod
+
+spec:
+  containers:
+  - name: palestine-pod
+    image: mustafa3li/palestine:latest
+
+    ports:
+    - containerPort: 8000
+
+    resources:
+      limits:
+        cpu: "3036m"
+        memory: "8128Mi"
+      requests:
+        cpu: "2024m"
+        memory: "4048Mi"

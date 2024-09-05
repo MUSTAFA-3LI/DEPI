@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: palestine-dep
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: palestine-pod
+
+  template:
+    metadata:
+      labels:
+        app: palestine-pod
+
+    spec:
+      containers:
+        - name: palestine
+          image: mustafa3li/palestine:latest
+          ports:
+            - containerPort: 8000
+          resources:
+            limits:
+              cpu: "2"
+              memory: "4064Mi"
+            requests:
+              cpu: "0.1"
+              memory: "2048Mi"
