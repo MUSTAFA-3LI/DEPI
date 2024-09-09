@@ -20,7 +20,7 @@ pipeline {
             }
         }
 
-        steps ("Helm Deployment") {
+        stage ("Helm Deployment") {
             steps {
                 sh 'helm upgrade --install palestine ./palestine-chart -n palestine-ns --create-namespace'
             }
