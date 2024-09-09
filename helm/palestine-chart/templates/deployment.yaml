@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: palestine-dep
+  labels:
+    app: palestine
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: palestine
+  template:
+    metadata:
+      labels:
+        app: palestine
+    spec:
+      containers:  
+      - name: palestine
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+          name: container-port
+        resources:
+          requests:
+            memory: {{ .Values.memoryRequest }}
+            cpu: {{ .Values.cpuRequest }}
+          limits:
+            memory: {{ .Values.memoryLimit }}
+            cpu: {{ .Values.cpuLimit }}
