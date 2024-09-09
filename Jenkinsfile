@@ -19,5 +19,11 @@ pipeline {
                 sh 'docker build -t image .' 
             }
         }
+
+        steps ("Helm Deployment") {
+            steps {
+                sh 'helm upgrade --install palestine ./palestine-chart -n palestine-ns --create-namespace'
+            }
+        }
     }
 }
