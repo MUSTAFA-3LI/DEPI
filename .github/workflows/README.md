@@ -27,6 +27,3 @@ to check the git_action.yml file before push it in github we can use tool `act`
 ```bash
 act -W .github/workflows/git_action.yml
 ```
-![alt text](images/img_9.png)
-
-![alt text](images/img_10.png)
