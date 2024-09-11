@@ -36,6 +36,8 @@ to run the playbook run the command:
 ```bash
 ansible-playbook -i hosts.ini ansible.yaml
 ```
-13
+![img_13](https://github.com/user-attachments/assets/40d6b0e0-ad21-4c30-9aa6-c322b1010ad5)
+
 then we can open our application from the DNS of AWS machines with port `8000`
-15
+
+![img_15](https://github.com/user-attachments/assets/ff3f4fec-d265-4a62-b971-6d5a4b4320fa)
