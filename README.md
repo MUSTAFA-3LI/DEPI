@@ -1,8 +1,23 @@
-![ CI (Test And Build) ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
+![ CI/CD (Test And Build) ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
 
 # Weather App From Implementation of API
 
 This is a simple weather app built with Flask that displays weather information for a specific region ( user choose the region from site [https://weatherwidget.io/] and get the code of his/her choices, then get the code from site directly ) using Weatherwidget.io. The app serves static files and includes automated tests for verifying the server responses.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed on your device or the AWS machine:
+
+1. **Python 3.12.3**
+2. **requirements.txt**
+3. **Docker**
+4. **act**
+5. **Jenkins**
+6. **Ansible** 
+7. **terraform**
+8. **Cloud provider (AWS) CLI**
+9. **minikube and kubectl**
+10. **helm**
 
 ## Features
 
@@ -42,6 +57,7 @@ pip install -r requirements.txt
 
 The app will be available at `localhost:8000`.
 
+![alt text](images/img_2.png)
 
 # Testing 
 
@@ -53,7 +69,7 @@ test the favicon.ico 's response (= 200 or 304)
     pytest tester.py
     python3 tester.py
 ```
-
+![alt text](images/img_3.png)
 
 # Docker 
 
@@ -69,6 +85,8 @@ Before you begin, ensure you have Docker installed on your system.
 ```bash
     docker build -t < image_name > .
 ```
+![alt text](images/img_4.png)
+
 
 ## Run Dockerfile
 ```bash
@@ -83,6 +101,8 @@ If you prefer to pull the pre-built Docker image from Docker Hub instead of buil
     docker pull mustafa3li/palestine:latest
     docker run -p 8000:8000 mustafa3li/palestine:latest
 ```
+![alt text](images/img_2.png)
+
 
 # Docker Compose
 Docker Compose is a tool for defining and running multi-container Docker applications. It allows you to describe the infrastructure of your application using a YAML file (docker-compose.yaml). With Docker Compose, you can manage and orchestrate multiple containers as a single service, simplifying the process of creating, starting, stopping, and scaling your application.
@@ -92,44 +112,33 @@ Docker Compose is a tool for defining and running multi-container Docker applica
 ```bash
     docker compose up -d
 ```
+![alt text](images/img_5.png)
+
+
 then we can open the wordpress from "[wordpress](http://localhost:5001/),
 and we can open phpmyadmin from [phpmyadmin](http://localhost:7001/)
 
-# GitHub Action
-
-This workflow automates testing and building on push to `main` or any tag.
-
-## Workflow Triggers
-
-- Push to `main`
-- Push with any tag
-
-## Jobs
-
-1. **Tester**
-   - Checkout code
-   - Set up Python 3.12
-   - Install dependencies
-   - Run tests with `pytest`
-
-2. **Build**
-   - Depends on Tester job
-   - Checkout code
-   - Build Docker image `palestine_weather:latest`
-
-#### The CI/CD workflow automatically runs on each push to the main branch or when tags are pushed. To manually trigger the workflow or customize it, you can modify the .github/workflows/ci.yml file.
-
-to check the git_action.yml file before push it in github we can use tool `act`
+## Push my image to DockerHub
 ```bash
-act -W .github/workflows/git_action.yml
+    docker login # then enter username and password of your DockerHub account
+    docker push < image_name >
 ```
+![alt text](images/img_6.png)
 
-## AWS and Jenkins
-After creating AWS machines.
 
-# Jenkins Pipeline for Testing and Docker Build
+# Jenkinks
+## Jenkins Pipeline
 
 This Jenkins pipeline automates setting up a Python virtual environment, installing dependencies, running tests, and building a Docker image.
+
+## Jenkins installation
+[Install Jenkins on Linux](https://www.jenkins.io/doc/book/installing/linux)
+
+then get the passkey of Jenkins server to login from default port `8080`
+
+```bash
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
 
 ## Pipeline Stages
 
@@ -147,60 +156,10 @@ This Jenkins pipeline automates setting up a Python virtual environment, install
 - Configure a Jenkins pipeline job to use this `Jenkinsfile`.
 - Ensure Jenkins has Docker and Python 3 installed on its agents.
 
-This pipeline is triggered manually or based on your preferred conditions, such as code pushes.
+This pipeline is triggered automaticaly according to your conditions (like: when you push your project to github) by adding some of private credintial of your repo by webhook 
 
+![alt text](images/img_7.png)
 
+or manually from Jenkins server site.
 
-## Ansible 
-
-This project sets up a development environment on three AWS virtual machines using Ansible. The setup includes installing essential packages, Docker, and deploying an app container.
-
-## Project Structure
-
-- `ansible.cfg`: Configuration file for Ansible.
-- `hosts.ini`: Inventory file containing the AWS instances.
-- `ansible.yaml`: Ansible playbook that defines the tasks to be executed on the AWS instances.
-
-## Prerequisites
-
-Before you can run the playbook, ensure you have (python, pipx, depandicies)
-
-1. **Ansible** installed on your control machine. You can install it using:
-    ```bash
-    sudo apt update
-    pipx install --include-deps ansible
-    pipx install ansible-core
-    pipx install ansible-core==2.12.3
-    ```
-
-2. **Access to your AWS instances** via SSH. Make sure you have the `labsuser.pem` key file and it's properly configured.
-   ```bash
-   cd Downloads/
-   sudo chmod 400 ./labsuser.pem
-   ssh -i ./labsuser.pem "the name of AWS virtual machine"
-   ```
-
-to run the playbook run the command:
-```bash
-ansible-playbook -i hosts.ini ansible.yaml
-```
-
-# Terraform AWS Configuration
-
-This Terraform configuration sets up an AWS environment with a security group and EC2 instances.
-
-## Key Components
-
-- **AWS Security Group**: Allows SSH (port 22) and HTTP (port 80) inbound traffic from anywhere.
-- **EC2 Instances**: Launches 3 `t3.medium` instances with Ubuntu 24.04 LTS.
-
-```bash
-cd terraform
-terraform init
-terraform plan
-terraform apply
-```
-After finishing from AWS machines
-```bash
-terraform destory
-```
+![alt text](images/img_8.png)
