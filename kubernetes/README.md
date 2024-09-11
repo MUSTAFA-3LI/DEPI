@@ -1,0 +1,76 @@
+# Kubernetes Deployment for My Application
+
+This repository contains Kubernetes manifests to deploy and manage the application.
+
+## Prerequisites
+
+- **minikube** 
+```bash
+(minikube version: v1.33.1
+commit: 5883c09216182566a63dff4c326a6fc9ed2982ff) 
+```
+- **kubectl** 
+```bash
+Client Version: v1.31.0
+Kustomize Version: v5.4.2
+Server Version: v1.30.0
+```
+- **Docker** (for building images)
+
+## Kubernetes Manifests
+
+- **Namespace**: Defines a namespace for isolating resources.
+- **LimitRange**: Sets resource limits for the namespace.
+- **Deployment**: Manages the deployment of the application.
+- **Service**: Exposes the application within the cluster.
+- **Ingress**: Manages external access to the services.
+- **Pod**: Defines the individual pods (if needed).
+
+## Deployment
+
+1. **Create the namespace**:
+    ```bash
+    kubectl apply -f namespace.yaml
+    ```
+
+2. **Apply the LimitRange**:
+    ```bash
+    kubectl apply -f limits.yaml
+    ```
+
+3. **Deploy the application**:
+    ```bash
+    kubectl apply -f deployment.yaml
+    ```
+
+4. **Create the service**:
+    ```bash
+    kubectl apply -f service.yaml
+    ```
+
+5. **Set up ingress**:
+    ```bash
+    kubectl apply -f ingress.yaml
+    ```
+
+## Usage
+
+- **Check the status of all cluster**:
+    ```bash
+    kubectl get all -n palestine-ns
+    ```
+
+then the application will be acess via the service 
+```bash
+minikube service palestine-svc
+```
+
+16
+
+## Cleanup
+
+To delete all the resources created:
+
+```bash
+kubectl delete all --all -n palestine-ns
+```
