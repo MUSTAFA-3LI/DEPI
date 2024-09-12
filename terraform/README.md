@@ -13,6 +13,8 @@ terraform init
 terraform plan
 terraform apply
 ```
+![img_14](https://github.com/user-attachments/assets/6d390fb5-985b-4c91-ad3d-f0621a0b7620)
+
 After finishing from AWS machines
 ```bash
 terraform destory
