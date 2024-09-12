@@ -1,5 +1,7 @@
 # Terraform AWS Configuration
 
+![terraform](https://github.com/user-attachments/assets/25f7ffe6-2f75-46b7-a1ec-8a5ba2ca0016)
+
 This Terraform configuration sets up an AWS environment with a security group and EC2 instances.
 
 ## Key Components
