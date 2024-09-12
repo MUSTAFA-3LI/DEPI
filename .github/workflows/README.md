@@ -1,5 +1,7 @@
 # GitHub Action
 
+![github_action](https://github.com/user-attachments/assets/f33d0203-0234-49b2-a2d2-8603cf170a49)
+
 This workflow automates testing and building on push to `main` or any tag.
 
 ## Workflow Triggers
