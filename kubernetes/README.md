@@ -1,5 +1,7 @@
 # Kubernetes Deployment for My Application
 
+![kuberenetes](https://github.com/user-attachments/assets/0a763809-e01b-4854-821f-1498be63cc75)
+
 This repository contains Kubernetes manifests to deploy and manage the application.
 
 ## Prerequisites
