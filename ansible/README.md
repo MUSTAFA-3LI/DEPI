@@ -1,5 +1,7 @@
 ## Ansible 
 
+![ansible](https://github.com/user-attachments/assets/e266c548-f6e0-4313-bd1d-acab5f916ca8)
+
 This project sets up a development environment on three AWS virtual machines using Ansible. The setup includes installing essential packages, Docker, and deploying an app container.
 
 ## Project Structure
