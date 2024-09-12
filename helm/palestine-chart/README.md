@@ -29,7 +29,7 @@ then the application will be acess via the service
 minikube service palestine-svc
 ```
 
-17
+![img_17](https://github.com/user-attachments/assets/82e095ae-6927-4d44-bde2-f9c645a23a94)
 
 ## Cleanup
 
