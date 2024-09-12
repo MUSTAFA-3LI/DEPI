@@ -65,7 +65,7 @@ then the application will be acess via the service
 minikube service palestine-svc
 ```
 
-16
+![img_16](https://github.com/user-attachments/assets/31a037fe-4b3f-4f61-bf13-bd0390a6e40d)
 
 ## Cleanup
 
