@@ -1,5 +1,7 @@
 # Helm Chart for Deploying My Application
 
+![helm](https://github.com/user-attachments/assets/025259fd-11b3-4f67-8a12-f8481e3aa02f)
+
 This Helm chart is used to deploy your application on a Kubernetes cluster.
 
 ## Prerequisites
