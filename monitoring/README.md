@@ -1,5 +1,8 @@
 # Monitoring Logs with Grafana and Loki
 
+![monitoring](https://github.com/user-attachments/assets/06b4ee18-da0e-42a2-a208-ed55d824af22)
+
+
 This setup uses Docker Compose to run an application and monitor its logs using Grafana and Loki.
 
 ## Prerequisites
