@@ -73,6 +73,8 @@ test the favicon.ico 's response (= 200 or 304)
 
 # Docker 
 
+![docker](https://github.com/user-attachments/assets/c5bd4cf1-cd4f-4b8a-b46e-fea654eb1436)
+
 This repository contains a Dockerized Python application.
 
 ## Installation
@@ -127,6 +129,9 @@ and we can open phpmyadmin from [phpmyadmin](http://localhost:7001/)
 
 
 # Jenkinks
+
+![Jenkins](https://github.com/user-attachments/assets/7fed81a8-0043-4174-b1c1-27552f672a35)
+
 ## Jenkins Pipeline
 
 This Jenkins pipeline automates setting up a Python virtual environment, installing dependencies, running tests, and building a Docker image.
