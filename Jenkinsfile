@@ -16,7 +16,9 @@ pipeline {
 
         stage('Docker Login') {
             steps {
-                sh 'echo $DOCKER_PASSWORD | docker login -u mustafa3li --password-stdin'
+                withCredentials([string(credentialsId: 'docker-password', variable: 'DOCKER_PASSWORD')]) {
+                    sh 'echo $DOCKER_PASSWORD | docker login -u mustafa3li --password-stdin'
+                }
             }
         }
 
