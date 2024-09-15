@@ -14,9 +14,21 @@ pipeline {
         }
         
 
-        stage('Docker building') {  
+        stage('Docker Login') {
             steps {
-                sh 'docker build -t image .' 
+                sh 'echo $DOCKER_PASSWORD | docker login -u mustafa3li --password-stdin'
+            }
+        }
+
+        stage('Docker Build') { 
+            steps {
+                sh 'docker build -t mustafa3li/palestine:latest .' 
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                sh 'docker push mustafa3li/palestine:latest'
             }
         }
     }
