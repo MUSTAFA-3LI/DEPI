@@ -96,8 +96,10 @@ NAME                       TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)    
 ingress-nginx-controller   NodePort   10.103.176.209   <none>        80:30305/TCP,443:32344/TCP   25m
 ```
 to open the first service (app) `http://palestine.local:30305/`
-to open the second service (app) `http://palestine.local:30305/httod`
+![svc_1](https://github.com/user-attachments/assets/1c33af28-2e38-4638-a135-b526d90897bc)
 
+to open the second service (app) `http://palestine.local:30305/httod`
+![svc_2](https://github.com/user-attachments/assets/911282ce-745a-403f-92f1-1051a6583d30)
 
 
 ## Cleanup
