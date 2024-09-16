@@ -44,8 +44,8 @@ This repository contains a GitHub Actions workflow that automates testing and bu
 ```bash
 act -W .github/workflows/git_action.yml
 ```
-![img_9](https://github.com/user-attachments/assets/49632196-561e-485f-a331-7f086e71a023)
+![img_9](https://github.com/user-attachments/assets/a456833a-7bf6-4bb8-ace6-05e89c655bea)
 
 - Actions of repository
 
-![img_10](https://github.com/user-attachments/assets/b7419a00-138c-4f02-adf7-b3bf9a9f1c06)
+![img_10](https://github.com/user-attachments/assets/6bbb2014-ac51-4c7a-9ffc-a2b7b54534c4)
