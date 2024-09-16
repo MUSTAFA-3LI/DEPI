@@ -69,6 +69,22 @@ minikube service palestine-svc
 
 ![img_16](https://github.com/user-attachments/assets/31a037fe-4b3f-4f61-bf13-bd0390a6e40d)
 
+## ingress
+u should put the ip of minikube in /etc/hosts file 
+```bash
+minikube ip
+echo < minikube ip > palestine.local > /etc/hosts 
+```
+
+```bash
+kubectl get svc ingress-nginx-controller -n ingress-nginx
+
+NAME                       TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
+ingress-nginx-controller   NodePort   10.103.176.209   <none>        80:30305/TCP,443:32344/TCP   25m
+```
+to open the first service (app) `http://palestine.local:30305/`
+to open the second service (app) `http://palestine.local:30305/httod`
+
 ## Cleanup
 
 To delete all the resources created:

@@ -10,6 +10,6 @@ spec:
       cpu: "3036m"
       memory: "8128Mi"
     min: 
-     cpu: "2024m"
-     memory: "4048Mi"
+     cpu: "512m"
+     memory: "1024Mi"
     type: Container

@@ -2,8 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: palestine-ingress
-
+  namespace: palestine-ns
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
 spec:
+  ingressClassName: nginx
   rules:
   - host: palestine.local
     http:
@@ -15,3 +18,10 @@ spec:
               name: palestine-svc
               port:
                 number: 8000
+        - path: /httpd
+          pathType: Prefix
+          backend:
+            service:
+              name: httpd-svc
+              port:
+                number: 5000
