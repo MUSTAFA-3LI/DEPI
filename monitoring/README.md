@@ -5,6 +5,15 @@
 
 This setup uses Docker Compose to run an application and monitor its logs using Grafana and Loki.
 
+## Table of Contents
+
+- [Monitoring Logs with Grafana and Loki](#monitoring-logs-with-grafana-and-loki)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+    - [Clone the Repository](#clone-the-repository)
+    - [Run Docker Compose](#run-docker-compose)
+
 ## Prerequisites
 
 - Docker
@@ -12,25 +21,27 @@ This setup uses Docker Compose to run an application and monitor its logs using 
 
 ## Setup
 
-1. **Clone the Repository**
+### Clone the Repository
 
-   Clone the repository containing the `docker-compose.yaml` file in the app by adding the image.
+Clone the repository containing the `docker-compose.yaml` file.
 
-2. **Run Docker Compose**
+### Run Docker Compose
 
 Start the services using Docker Compose:
-``` 
+
+```sh
 docker compose up
 ```
+
 ![img_18](https://github.com/user-attachments/assets/3f55f991-42e4-44ba-8d07-804735cbb036)
 
-then we can login in grafana `localhost:3000`
-open my application `localhost:8000`
-prometheus `localhost:9090`
+- then we can login in grafana `localhost:3000`
+- open my application `localhost:8000`
+- prometheus `localhost:9090`
 
 ![img_19](https://github.com/user-attachments/assets/62c72a4e-0d93-47c0-b462-c2cf248dedbd)
 
-to check the status of running the application from prometheus targets `http://localhost:9090/targets?search=`
+- Check the status of running the application from prometheus targets `http://localhost:9090/targets?search=`
 
 ![img_23](https://github.com/user-attachments/assets/d7271151-e833-4f68-a97d-cb9cadd61430)
 

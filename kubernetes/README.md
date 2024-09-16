@@ -4,6 +4,17 @@
 
 This repository contains Kubernetes manifests to deploy and manage the application.
 
+## Table of Contents
+
+- [Kubernetes Deployment for My Application](#kubernetes-deployment-for-my-application)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Kubernetes Manifests](#kubernetes-manifests)
+  - [Deployment](#deployment)
+  - [Usage](#usage)
+  - [ingress](#ingress)
+  - [Cleanup](#cleanup)
+
 ## Prerequisites
 
 - **minikube** 
@@ -76,6 +87,8 @@ minikube ip
 echo < minikube ip > palestine.local > /etc/hosts 
 ```
 
+Retrieve the Ingress service details:
+
 ```bash
 kubectl get svc ingress-nginx-controller -n ingress-nginx
 
@@ -84,6 +97,8 @@ ingress-nginx-controller   NodePort   10.103.176.209   <none>        80:30305/TC
 ```
 to open the first service (app) `http://palestine.local:30305/`
 to open the second service (app) `http://palestine.local:30305/httod`
+
+
 
 ## Cleanup
 

@@ -4,6 +4,13 @@
 
 This Terraform configuration sets up an AWS environment with a security group and EC2 instances.
 
+## Table of Contents
+
+- [Terraform AWS Configuration](#terraform-aws-configuration)
+  - [Table of Contents](#table-of-contents)
+  - [Key Components](#key-components)
+
+
 ## Key Components
 
 - **AWS Security Group**: Allows SSH (port 22) and HTTP (port 80) inbound traffic from anywhere.

@@ -2,7 +2,17 @@
 
 ![ansible](https://github.com/user-attachments/assets/e266c548-f6e0-4313-bd1d-acab5f916ca8)
 
-This project sets up a development environment on three AWS virtual machines using Ansible. The setup includes installing essential packages, Docker, and deploying an app container.
+This project configures a development environment on three AWS virtual machines using Ansible, encompassing the installation of essential packages, Docker, and the deployment of an application container.
+
+## Table of Contents
+
+- [Ansible](#ansible)
+- [Table of Contents](#table-of-contents)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Playbook](#running-the-playbook)
+
 
 ## Project Structure
 
@@ -13,12 +23,16 @@ This project sets up a development environment on three AWS virtual machines usi
 
 ## Prerequisites
 
-Before you can run the playbook, ensure you have (python, pipx, depandicies)
+Before you can run the playbook, ensure you have the following:
+
+- Python
+- Pipx
+- Dependencies
 
 ## Installation
 [Install Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible-with-pipx)
 
-1. **Ansible** installed on your control machine. You can install it using:
+1. **Install Ansible** on your control machine. You can install it using:
     ```bash
     sudo apt update
     pipx install --include-deps ansible
@@ -26,15 +40,16 @@ Before you can run the playbook, ensure you have (python, pipx, depandicies)
     pipx install ansible-core==2.12.3
     ```
 
-2. **Access to your AWS instances** via SSH. Make sure you have the `labsuser.pem` key file and it's properly configured.
-3. 
-   ```bash
-   cd Downloads/
-   sudo chmod 400 ./labsuser.pem
-   ssh -i ./labsuser.pem "the name of AWS virtual machine"
-   ```
+2. **Access your AWS instances** via SSH. Make sure you have the `labsuser.pem` key file and it's properly configured:
+    ```bash
+    cd Downloads/
+    sudo chmod 400 ./labsuser.pem
+    ssh -i ./labsuser.pem "name_of_aws_instance"
+    ```
 
-to run the playbook run the command:
+## Running the Playbook
+
+To run the playbook, execute the following command:
 ```bash
 ansible-playbook -i hosts.ini ansible.yaml
 ```
