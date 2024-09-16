@@ -74,7 +74,7 @@ pip install -r requirements.txt
 
 - Open App `localhost:8000`.
 
-![alt text](images/img_2.png)
+![img_2](https://github.com/user-attachments/assets/514f82ba-72e0-4861-8dfc-626f460ddbe6)
 
 # Testing 
 
@@ -90,7 +90,7 @@ The tests include:
 - Checking the response for styles.css (expecting status code 200 or 304)
 - Checking the response for favicon.ico (expecting status code 200 or 304)
 
-![alt text](images/img_3.png)
+![img_3](https://github.com/user-attachments/assets/f15a4528-dd7b-496c-9a00-8332d2afeece)
 
 # Docker 
 
@@ -107,7 +107,7 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
 ```bash
     docker build -t < image_name > .
 ```
-![alt text](images/img_4.png)
+![img_4](https://github.com/user-attachments/assets/3671e149-b72f-445b-bd53-b2c49322ea37)
 
 
 ## Run Dockerfile
@@ -121,7 +121,7 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
     docker pull mustafa3li/palestine:latest
     docker run -p 8000:8000 mustafa3li/palestine:latest
 ```
-![alt text](images/img_2.png)
+![img_2](https://github.com/user-attachments/assets/514f82ba-72e0-4861-8dfc-626f460ddbe6)
 
 
 ## Docker Compose
@@ -130,7 +130,7 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
 ```bash
     docker compose up -d
 ```
-![alt text](images/img_5.png)
+![img_5](https://github.com/user-attachments/assets/660d3b5a-dc2b-4c5e-a286-e14167ae0770)
 
 
 - Access "[wordpress](http://localhost:5001/)
@@ -141,7 +141,7 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
     docker login # then enter username and password of your DockerHub account
     docker push < username >/< image_name >:TAG
 ```
-![alt text](images/img_6.png)
+![img_6](https://github.com/user-attachments/assets/5443ec12-f00f-48df-bf81-278808a14194)
 
 
 ## Jenkinks
@@ -183,8 +183,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
 1. **Automaticly**
 
-![alt text](images/img_7.png)
+![img_7](https://github.com/user-attachments/assets/8484dcf0-ee0e-41da-a03c-7f19effcc70f)
 
 2. **Manualy**
 
-![alt text](images/img_8.png)
+![img_8](https://github.com/user-attachments/assets/df197994-221b-431a-a2e7-65c6eec4fde7)
