@@ -57,4 +57,5 @@ ansible-playbook -i hosts.ini ansible.yaml
 
 then we can open our application from the DNS of AWS machines with port `8000`
 
-![img_15](https://github.com/user-attachments/assets/ff3f4fec-d265-4a62-b971-6d5a4b4320fa)
+![img_15](https://github.com/user-attachments/assets/e1acda0d-88cf-4297-b764-4f306dfe6e7e)
+
