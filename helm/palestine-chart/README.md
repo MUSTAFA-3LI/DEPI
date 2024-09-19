@@ -40,7 +40,8 @@ then the application will be acess via the service
 minikube service < name of service >
 ```
 
-![img_17](https://github.com/user-attachments/assets/82e095ae-6927-4d44-bde2-f9c645a23a94)
+![img_17](https://github.com/user-attachments/assets/091ea5fa-58a7-4929-8bd9-9823256fb5e3)
+
 
 ## Cleanup
 
