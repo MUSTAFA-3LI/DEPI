@@ -37,7 +37,7 @@ to **Check the status of all cluster**:
 then the application will be acess via the service 
 
 ```bash
-minikube service < name of service >
+minikube service < name of service > -n < namespace >
 ```
 
 ![img_17](https://github.com/user-attachments/assets/091ea5fa-58a7-4929-8bd9-9823256fb5e3)
