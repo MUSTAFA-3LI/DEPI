@@ -74,7 +74,8 @@ pip install -r requirements.txt
 
 - Open App `localhost:8000`.
 
-![img_2](https://github.com/user-attachments/assets/514f82ba-72e0-4861-8dfc-626f460ddbe6)
+![img_2](https://github.com/user-attachments/assets/c41d4121-d153-40b3-8289-5760a65c9639)
+
 
 # Testing 
 
@@ -121,7 +122,8 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
     docker pull mustafa3li/palestine:latest
     docker run -p 8000:8000 mustafa3li/palestine:latest
 ```
-![img_2](https://github.com/user-attachments/assets/514f82ba-72e0-4861-8dfc-626f460ddbe6)
+![img_2](https://github.com/user-attachments/assets/c41d4121-d153-40b3-8289-5760a65c9639)
+
 
 
 ## Docker Compose
