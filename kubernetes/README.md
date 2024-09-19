@@ -60,8 +60,12 @@ Server Version: v1.30.0
     ```bash
     kubectl apply -f service.yaml
     ```
+5. **Create the pod**
+   ```bash
+   kubectl apply -f pod.yaml
+   ```
 
-5. **Set up ingress**:
+6. **Set up ingress**:
     ```bash
     kubectl apply -f ingress.yaml
     ```
@@ -75,10 +79,11 @@ Server Version: v1.30.0
 
 then the application will be acess via the service 
 ```bash
-minikube service palestine-svc
+minikube service palestine-svc -n palestine-ns
 ```
 
-![img_16](https://github.com/user-attachments/assets/31a037fe-4b3f-4f61-bf13-bd0390a6e40d)
+![img_16](https://github.com/user-attachments/assets/fc9b5fa9-f3cd-4fda-b5a9-208ba2d3e256)
+
 
 ## ingress
 u should put the ip of minikube in /etc/hosts file 
@@ -95,11 +100,11 @@ kubectl get svc ingress-nginx-controller -n ingress-nginx
 NAME                       TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
 ingress-nginx-controller   NodePort   10.103.176.209   <none>        80:30305/TCP,443:32344/TCP   25m
 ```
-to open the first service (app) `http://palestine.local:30305/`
-![svc_1](https://github.com/user-attachments/assets/1c33af28-2e38-4638-a135-b526d90897bc)
+to open the first service (app) `http://palestine.local:`<TCP Port>`/`
+![svc_1](https://github.com/user-attachments/assets/de893518-5bb6-48f3-8537-0a6d7164ee92)
 
-to open the second service (app) `http://palestine.local:30305/httod`
-![svc_2](https://github.com/user-attachments/assets/911282ce-745a-403f-92f1-1051a6583d30)
+to open the second service (app) `http://palestine.local:`<TCP Port>`/nginx`
+![svc_2](https://github.com/user-attachments/assets/7b3c9490-ae64-4620-82a9-82df6a138113)
 
 
 ## Cleanup
