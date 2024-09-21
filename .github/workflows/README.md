@@ -49,3 +49,7 @@ act -W .github/workflows/git_action.yml
 - Actions of repository
 
 ![img_10](https://github.com/user-attachments/assets/6bbb2014-ac51-4c7a-9ffc-a2b7b54534c4)
+
+- Image is pushed
+![docker hub](https://github.com/user-attachments/assets/a56ea330-ce13-40e1-b811-cee7f3f766b5)
+
