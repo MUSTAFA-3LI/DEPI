@@ -190,3 +190,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 2. **Manualy**
 
 ![img_8](https://github.com/user-attachments/assets/df197994-221b-431a-a2e7-65c6eec4fde7)
+
+In two ways the image is pushed in dockerhub
+
+![docker hub](https://github.com/user-attachments/assets/a56ea330-ce13-40e1-b811-cee7f3f766b5)
+
