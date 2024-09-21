@@ -138,6 +138,8 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
 - Access "[wordpress](http://localhost:5001/)
 - Acsess [phpmyadmin](http://localhost:7001/)
 
+
+
 ## Push my image to DockerHub
 ```bash
     docker login # then enter username and password of your DockerHub account

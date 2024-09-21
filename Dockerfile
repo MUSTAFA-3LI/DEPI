@@ -14,3 +14,5 @@ STOPSIGNAL SIGINT
 
 # CMD ["python3", "main.py"]
 CMD ["gunicorn", "-b", "0.0.0.0:8000", "gateway"]
+
+# cmd
