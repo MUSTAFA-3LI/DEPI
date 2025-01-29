@@ -1,6 +1,7 @@
 ![ CI (Test , Build , Push ) ](https://github.com/MUSTAFA-3LI/DEPI/actions/workflows/git_action.yml/badge.svg)
 
 # Weather App
+
 A simple weather app built with Flask that displays weather information for a user-specified region using Weatherwidget.io [https://weatherwidget.io/]
 . The app serves static files and includes automated tests for verifying server responses.
 
@@ -76,8 +77,7 @@ pip install -r requirements.txt
 
 ![img_2](https://github.com/user-attachments/assets/c41d4121-d153-40b3-8289-5760a65c9639)
 
-
-# Testing 
+# Testing
 
 To run tests, use the following commands:
 
@@ -85,6 +85,7 @@ To run tests, use the following commands:
     pytest tester.py
     python3 tester.py
 ```
+
 The tests include:
 
 - Verifying the response of a GET request (expecting status code 200)
@@ -93,7 +94,7 @@ The tests include:
 
 ![img_3](https://github.com/user-attachments/assets/f15a4528-dd7b-496c-9a00-8332d2afeece)
 
-# Docker 
+# Docker
 
 ![docker](https://github.com/user-attachments/assets/c5bd4cf1-cd4f-4b8a-b46e-fea654eb1436)
 
@@ -103,15 +104,16 @@ This repository contains a Dockerized Python application.
 
 Ensure Docker is installed on your system. Follow the official [Docker Installation Guide](https://docs.docker.com/engine/install/).
 
-
 ## Build Dockerfile
+
 ```bash
     docker build -t < image_name > .
 ```
+
 ![img_4](https://github.com/user-attachments/assets/3671e149-b72f-445b-bd53-b2c49322ea37)
 
-
 ## Run Dockerfile
+
 ```bash
     docker run -p8000:8000 < image_name >
 ```
@@ -122,31 +124,30 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
     docker pull mustafa3li/palestine:latest
     docker run -p 8000:8000 mustafa3li/palestine:latest
 ```
+
 ![img_2](https://github.com/user-attachments/assets/c41d4121-d153-40b3-8289-5760a65c9639)
 
-
-
 ## Docker Compose
+
 ### Activation Docker-Compose
 
 ```bash
     docker compose up -d
 ```
-![img_5](https://github.com/user-attachments/assets/660d3b5a-dc2b-4c5e-a286-e14167ae0770)
 
+![img_5](https://github.com/user-attachments/assets/660d3b5a-dc2b-4c5e-a286-e14167ae0770)
 
 - Access "[wordpress](http://localhost:5001/)
 - Acsess [phpmyadmin](http://localhost:7001/)
 
-
-
 ## Push my image to DockerHub
+
 ```bash
     docker login # then enter username and password of your DockerHub account
     docker push < username >/< image_name >:TAG
 ```
-![img_6](https://github.com/user-attachments/assets/5443ec12-f00f-48df-bf81-278808a14194)
 
+![img_6](https://github.com/user-attachments/assets/5443ec12-f00f-48df-bf81-278808a14194)
 
 ## Jenkinks
 
@@ -157,6 +158,7 @@ Ensure Docker is installed on your system. Follow the official [Docker Installat
 This Jenkins pipeline automates setting up a Python virtual environment, installing dependencies, running tests, and building a Docker image.
 
 ## Jenkins installation
+
 [Install Jenkins on Linux](https://www.jenkins.io/doc/book/installing/linux)
 
 - Get the passkey of Jenkins server to login from default port `8080`
@@ -168,15 +170,17 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ## Pipeline Stages
 
 1. **Requirements And Test**
+
    - Set up Python virtual environment
    - Install dependencies from `requirements.txt`
    - Run tests with `tester.py`
 
 2. **Docker Building**
+
    - Build Docker image tagged as `image`
-  
+
 3. **Login in DockerHub**
-4.  **Push image autamatincly**
+4. **Push image autamatincly**
 
 ## Usage
 
@@ -196,4 +200,3 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 In two ways the image is pushed in dockerhub
 
 ![docker hub](https://github.com/user-attachments/assets/a56ea330-ce13-40e1-b811-cee7f3f766b5)
-
