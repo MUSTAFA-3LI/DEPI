@@ -212,12 +212,6 @@ terraform.rc
 .travis.yml
 .taskcluster.yml
 
-# Docker
-docker-compose.yml
-Dockerfile
-.docker
-.dockerignore
-
 # Byte-compiled / optimized / DLL files
 **/__pycache__/
 **/*.py[cod]
